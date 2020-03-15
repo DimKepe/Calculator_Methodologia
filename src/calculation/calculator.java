@@ -9,6 +9,7 @@ public class calculator extends javax.swing.JFrame {
     String operator;
     String number;
     boolean DotPressed = false;
+    boolean DivRep = false;
     public calculator() {
         initComponents();
     }
@@ -366,9 +367,16 @@ public class calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_PlusActionPerformed
 
     private void DivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DivActionPerformed
-        firstnumber = Double.parseDouble(t1.getText());
-        t1.setText(" ");
-        operator="/";
+        if (DivRep==false) {
+            firstnumber = Double.parseDouble(t1.getText());
+            t1.setText(" ");
+            operator="/";
+            DivRep = true;}
+        else {
+            firstnumber = firstnumber / Double.parseDouble(t1.getText());
+            t1.setText(" ");
+            operator="/";
+        }
         DotPressed = false;
     }//GEN-LAST:event_DivActionPerformed
 
