@@ -301,72 +301,71 @@ public class calculator extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
+    private void b3ActionPerformed(java.awt.event.ActionEvent evt) {
         String number = t1.getText() + b3.getText();
         t1.setText(number); 
-    }//GEN-LAST:event_b3ActionPerformed
+    }
 
-    private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
+    private void b1ActionPerformed(java.awt.event.ActionEvent evt) {
         String number = t1.getText() + b1.getText();
         t1.setText(number);
-    }//GEN-LAST:event_b1ActionPerformed
+    }
 
-    private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
+    private void b2ActionPerformed(java.awt.event.ActionEvent evt) {
         String number = t1.getText() + b2.getText();
-        t1.setText(number);
-        
-    }//GEN-LAST:event_b2ActionPerformed
+        t1.setText(number);  
+    }
 
-    private void b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b4ActionPerformed
+    private void b4ActionPerformed(java.awt.event.ActionEvent evt) {
         String number = t1.getText() + b4.getText();
         t1.setText(number); 
-    }//GEN-LAST:event_b4ActionPerformed
+    }
 
-    private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
+    private void b5ActionPerformed(java.awt.event.ActionEvent evt) {
         String number = t1.getText() + b5.getText();
         t1.setText(number);
-    }//GEN-LAST:event_b5ActionPerformed
+    }
 
-    private void b6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b6ActionPerformed
+    private void b6ActionPerformed(java.awt.event.ActionEvent evt) {
         String number = t1.getText() + b6.getText();
         t1.setText(number);
-    }//GEN-LAST:event_b6ActionPerformed
+    }
 
-    private void b7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b7ActionPerformed
+    private void b7ActionPerformed(java.awt.event.ActionEvent evt) {
         String number = t1.getText() + b7.getText();
         t1.setText(number);
-    }//GEN-LAST:event_b7ActionPerformed
+    }
 
-    private void b8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b8ActionPerformed
+    private void b8ActionPerformed(java.awt.event.ActionEvent evt) {
         String number = t1.getText() + b8.getText();
         t1.setText(number);
-    }//GEN-LAST:event_b8ActionPerformed
+    }
 
-    private void MinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MinActionPerformed
+    private void MinActionPerformed(java.awt.event.ActionEvent evt) {
         firstnumber = firstnumber - Double.parseDouble(t1.getText());
         t1.setText(" ");
         operator="-";
         DotPressed = false;
-    }//GEN-LAST:event_MinActionPerformed
+    }
 
-    private void b9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b9ActionPerformed
+    private void b9ActionPerformed(java.awt.event.ActionEvent evt) {
         String number = t1.getText() + b9.getText();
         t1.setText(number);
-    }//GEN-LAST:event_b9ActionPerformed
+    }
 
-    private void b0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b0ActionPerformed
+    private void b0ActionPerformed(java.awt.event.ActionEvent evt) {
         String number = t1.getText() + b0.getText();
         t1.setText(number);
-    }//GEN-LAST:event_b0ActionPerformed
+    }
 
-    private void PlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlusActionPerformed
+    private void PlusActionPerformed(java.awt.event.ActionEvent evt) {
         firstnumber = firstnumber + Double.parseDouble(t1.getText());
         t1.setText(" ");
         operator="+";
         DotPressed = false;
-    }//GEN-LAST:event_PlusActionPerformed
+    }
 
-    private void DivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DivActionPerformed
+    private void DivActionPerformed(java.awt.event.ActionEvent evt) {
         if (DivRep==false) {
             firstnumber = Double.parseDouble(t1.getText());
             t1.setText(" ");
@@ -378,24 +377,25 @@ public class calculator extends javax.swing.JFrame {
             operator="/";
         }
         DotPressed = false;
-    }//GEN-LAST:event_DivActionPerformed
+    }
 
-    private void TimesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TimesActionPerformed
+    private void TimesActionPerformed(java.awt.event.ActionEvent evt) {
         Timesnumber = Timesnumber * Double.parseDouble(t1.getText());
         t1.setText(" ");
         operator="*";
         DotPressed = false;
-    }//GEN-LAST:event_TimesActionPerformed
+    }
 
-    private void DotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DotActionPerformed
+    private void DotActionPerformed(java.awt.event.ActionEvent evt) {
         if (DotPressed == false){
             String number = t1.getText() + Dot.getText();
             t1.setText(number);
             DotPressed = true;}
-    }//GEN-LAST:event_DotActionPerformed
+    }
 
-    private void EqualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EqualActionPerformed
+    private void EqualActionPerformed(java.awt.event.ActionEvent evt) {
         DotPressed = false;
+        DivRep = false;
         secondnumber = Double.parseDouble(t1.getText());
         if(operator == "+")
         {result= firstnumber + secondnumber;
@@ -410,17 +410,21 @@ public class calculator extends javax.swing.JFrame {
         {result= Timesnumber * secondnumber;
             t1.setText(Double.toString(result));
             Timesnumber = 1;}
-    }//GEN-LAST:event_EqualActionPerformed
+    }
 
-    private void CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CActionPerformed
-        t1.setText(" ");
+    private void CActionPerformed(java.awt.event.ActionEvent evt) {
+        DivRep = false;
+        DotPressed = false;
+    	t1.setText(" ");
         String number = "0";
         firstnumber = 0;
-    }//GEN-LAST:event_CActionPerformed
+    }
 
-    private void t1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t1ActionPerformed
+    private void t1ActionPerformed(java.awt.event.ActionEvent evt) {
         //null
-    }//GEN-LAST:event_t1ActionPerformed
+    }
+    
+
 
     public static void main(String args[]) {
         
@@ -431,7 +435,7 @@ public class calculator extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify
     private javax.swing.JButton C;
     private javax.swing.JButton Div;
     private javax.swing.JButton Dot;
@@ -451,5 +455,5 @@ public class calculator extends javax.swing.JFrame {
     private javax.swing.JButton b9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField t1;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration
 }
